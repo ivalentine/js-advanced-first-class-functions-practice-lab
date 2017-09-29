@@ -1,4 +1,5 @@
 const expect = chai.expect;
+const sinon = require('sinon');
 
 describe('index.js', function () {
   const drivers = [
@@ -62,7 +63,7 @@ describe('index.js', function () {
       expect(spy.calledWithExactly('Annette')).to.not.be.true;
     });
   });
-  
+
   describe('driversByRevenue()', function () {
     it('uses the sort() method to return a new array of drivers ordered by revenue (lowest to highest)', function () {
       expect(driversByRevenue(drivers)[0].name).to.eql('Sally');
